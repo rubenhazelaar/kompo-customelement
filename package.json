@@ -2,7 +2,7 @@
   "name": "kompo-customelement",
   "version": "1.0.0",
   "description": "Custom element functions for the Kompo library. Kompo is a react like library which tries to stay simple as possible. No virtual DOM or JSX. Kompo loves the DOM.",
-  "main": "./lib/index.js",
+  "main": "./lib/custom.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/rubenhazelaar/kompo-customelement.git"
