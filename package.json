@@ -1,0 +1,79 @@
+{
+  "name": "kompo-customelement",
+  "version": "0.8.2",
+  "description": "Custom element functions for the Kompo library. Kompo is a react like library which tries to stay simple as possible. No virtual DOM or JSX. Kompo loves the DOM.",
+  "main": "./lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rubenhazelaar/kompo-customelement.git"
+  },
+  "homepage": "https://github.com/rubenhazelaar/kompo-customelement/",
+  "bugs": "https://github.com/rubenhazelaar/kompo-customelement/issues",
+  "scripts": {
+    "commit": "./node_modules/.bin/git-cz",
+    "test": "./node_modules/.bin/karma start --single-run",
+    "build": "npm run build:cjs && npm run build:umd && npm run build:min",
+    "build:cjs": "./node_modules/.bin/babel ./src -d lib",
+    "build:umd": "./node_modules/.bin/webpack --entry ./src/custom.js --output-filename ./umd/kompo-customelement.js",
+    "build:min": "./node_modules/.bin/webpack -p --entry ./src/custom.js --output-filename ./umd/kompo-customelement.min.js",
+    "examples:build": "./node_modules/.bin/webpack --config examples.webpack.js",
+    "examples:watch": "./node_modules/.bin/webpack --config examples.webpack.js -w",
+    "lint": "./node_modules/.bin/eslint ./src/**",
+    "prepublish": "npm run build",
+    "start": "./node_modules/.bin/http-server /usr/src/app"
+  },
+  "keywords": [
+    "react",
+    "view",
+    "components",
+    "javascript",
+    "interface",
+    "DOM"
+  ],
+  "author": "Ruben Hazelaar <ruben.hazelaar@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "6.4.5",
+    "babel-core": "6.4.5",
+    "babel-eslint": "^5.0.0",
+    "babel-loader": "6.2.1",
+    "babel-plugin-syntax-flow": "^6.5.0",
+    "babel-plugin-transform-class-properties": "^6.5.2",
+    "babel-plugin-transform-es2015-classes": "6.4.5",
+    "babel-plugin-transform-flow-strip-types": "^6.5.0",
+    "babel-plugin-transform-object-assign": "6.3.13",
+    "babel-preset-es2015": "6.3.13",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "6.4.3",
+    "chai": "3.4.1",
+    "clean-webpack-plugin": "0.1.6",
+    "commitizen": "2.5.0",
+    "cz-conventional-changelog": "1.1.5",
+    "eslint": "1.10.3",
+    "eslint-loader": "1.2.0",
+    "eslint-plugin-flowtype": "^2.1.0",
+    "karma": "0.13.19",
+    "karma-chai": "0.1.0",
+    "karma-chrome-launcher": "0.2.2",
+    "karma-firefox-launcher": "0.1.7",
+    "karma-ie-launcher": "0.2.0",
+    "karma-mocha": "0.2.1",
+    "karma-safari-launcher": "0.1.1",
+    "karma-sinon": "1.0.4",
+    "karma-sourcemap-loader": "0.3.7",
+    "karma-webpack": "1.7.0",
+    "mocha": "2.3.4",
+    "node-static": "^0.7.8",
+    "sinon": "1.17.2",
+    "webpack": "^1.13.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "@webcomponents/custom-elements": "^1.0.0-alpha.3",
+    "kompo": "^1.0.0"
+  }
+}

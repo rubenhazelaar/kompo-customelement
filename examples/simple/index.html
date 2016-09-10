@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kompo - Custom Element</title>
+    <style>
+        h2 {
+            margin-top: 0;
+        }
+
+        div {
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            margin: 0 -0.5rem 1rem;
+        }
+
+        nav > a {
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            flex: 1 1 auto;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        nav > a:hover {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<pre>Make sure your browser supports custom elements v1!</pre>
+<script src="dist/simple-bundle.js"></script>
+<x-foo data-props='{"text":"injected from props"}'>
+    <h1>Click on me</h1>
+    <p>me also! (and check the console)</p>
+</x-foo>
+</body>
+</html>
