@@ -85,7 +85,7 @@ class CustomFoo extends HTMLElement {
     }
 
     // Construct the internal workings of the component
-    create({text}) {
+    construct({text}) {
         const h1 = this.children[0] || document.createElement('h1'),
             p = this.children[1] || document.createElement('p');
 
